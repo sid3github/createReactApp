@@ -1,3 +1,12 @@
 body{
     background: blue;
 }
+.mainComponent{
+    border: 5px yellow solid;
+}
+.profile{
+    border: 5px red solid;
+}
+.profilePic{
+    border : 5px black dashed;
+}
