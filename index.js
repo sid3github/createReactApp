@@ -5,6 +5,6 @@ var App = require('./App');
 
 
 ReactDOM.render(
-                <App/>,
+               <App/>,
                 document.getElementById('app')
                 );

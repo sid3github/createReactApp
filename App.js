@@ -1,13 +1,39 @@
 const React = require('react');
-var Profile = require('./component');
+const ListContacts = require('./ListContact');
 
-class App extends React.Component{
-    render() {
-        return (
-            <div className='mainComponent'> hello react training
-            <Profile/>
-        </div> )
-                }
-                }
+const contacts = [
+    {
+        id: 'tom',
+        name: 'Tom',
+        githubUsername: 'tom',
+        avatarURL: 'http://localhost:5001/tyler.jpg'
+    },
+    {
+        id: 'karen',
+        name: 'Karen ',
+        githubUsername: 'karen_isgrigg',
+        avatarURL: 'http://localhost:5001/karen.jpg'
+    },
+    {
+        id: 'richard',
+        name: 'Richard ',
+        githubUsername: 'richard',
+        avatarURL: 'http://localhost:5001/richard.jpg'
+    },
+]
 
-                module.exports = App;
+
+
+ class App extends React.Component{
+    render(){
+        return(
+            <ListContacts contacts={contacts}/>
+        )
+    }
+ }
+
+
+
+
+
+module.exports = App;
