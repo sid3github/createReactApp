@@ -1,29 +1,29 @@
 const React = require('react');
 
-class ListContacts extends React.Component{
-    render(){
-        console.log(this.props);
-        return(
-            <ol>
-                {this.props.contacts.map((contacts)=>{
-                    return <li key={contacts.name}>{contacts.name}
+function ListContacts (props) {
+    return (
+        <ol className='contact-list'>
+            {props.contacts.map((contact) => (
+                <li key={contact.id} className='contact-list-item'>
                     <div
                         className='contact-avatar'
                         style={{
-                            backgroundImage: `url(${contacts.avatarURL})`
+                            backgroundImage: `url(${contact.avatarURL})`
                         }}
-                    >
+                    ></div>
+                    <div className='contact-details'>
+                        <p>{contact.name}</p>
+                        <p>{contact.handle}</p>
                     </div>
-                        <div className='contact-details'>
-                            <p>{contacts.name}</p>
-                            <p>{contacts.githubUsername}</p>
-
-                        </div>
-                    </li>
-                })}
-            </ol>
-        )
-    }
+                    <button
+                        onClick={() => props.onDeleteContact(contact)}
+                        className='contact-remove'>
+                        Remove
+                    </button>
+                </li>
+            ))}
+        </ol>
+    )
 }
 
 
