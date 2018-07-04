@@ -1,5 +1,6 @@
 const React = require('react');
 const ListContacts = require('./ListContact');
+import InputData from './InputData';
 
 
 
@@ -34,8 +35,11 @@ const ListContacts = require('./ListContact');
      render() {
          return (
              <div>
-             <ListContacts contacts={this.state.contacts}/>
+                 <InputData />
+                 <ListContacts contacts={this.state.contacts}/>
              </div>
+
+
 
          )
      }
